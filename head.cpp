@@ -158,9 +158,7 @@ int commander::seekBanned()
 	for (int ID1 = 1; ID1 <= 3; ID1++)
 		for (int ID2 = 1; ID2 <= 9; ID2++)
 		{
-			int s = 1;
-			for (int k = 1; k <= 9;k++)
-				s*=publiclib.banned[datap][i]
+			
 		}
 	return 0;
 }
