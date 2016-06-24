@@ -1,14 +1,12 @@
 #include "head.h"
 #include<string.h>
 
-publiclib::publiclib(int tmp)
+int publiclib()
 {
-	memset(data, 0, (9000*sizeof(int)));
-	memset(banned, 0, (90000 * sizeof(int)));
 	datap = 0;
-	data[0][1][5] = 3;
+	mapdata[0][1][5] = 3;
 	chgLocBanned(1, 5, 3);
-	data[0][8][7] = 3;
+	mapdata[0][8][7] = 3;
 	fstream file("a.txt");
 	int top,i,j,k;
 	file >> top;
@@ -24,13 +22,11 @@ publiclib::publiclib(int tmp)
 		chgNumBanned(i, j, k);
 	}
 	chgBannedZero();
+	return 0;
 }
 
-publiclib::~publiclib()
-{
-}
 
-int publiclib::chgLocBanned(int i, int j, int k)
+int chgLocBanned(int i, int j, int k)
 {
 	for (int tmp = 1; tmp <= 9; tmp++)
 		banned[datap][i][j][tmp] = 1;
@@ -45,7 +41,7 @@ int publiclib::chgLocBanned(int i, int j, int k)
 	return 0;
 }
 
-int publiclib::chgNumBanned(int orderID, int headOrEnd, int num)
+int chgNumBanned(int orderID, int headOrEnd, int num)
 {
 	//ÐÐ
 	if (orderID / 10 == 1)
@@ -103,7 +99,7 @@ int publiclib::chgNumBanned(int orderID, int headOrEnd, int num)
 	}
 	return 0;
 }
-int publiclib::chgBannedZero()
+int chgBannedZero()
 {
 	for (int i = 1; i <= 9; i++)
 		for (int j = 1; j <= 9; j++)
@@ -116,22 +112,22 @@ int publiclib::chgBannedZero()
 		}
 	return 0;
 }
-int publiclib::outputData()
+int outputData()
 {
 	return 0;
 }
 
-int publiclib::upData()
+int upData()
 {
 	return 0;
 }
 
-int publiclib::upBanned()
+int upBanned()
 {
 	return 0;
 }
 
-int publiclib::recover()
+int recover()
 {
 	return 0;
 }

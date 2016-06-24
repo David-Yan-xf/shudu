@@ -3,23 +3,19 @@
 #include<fstream>
 using namespace std;
 
-class publiclib
-{
-public:
-	publiclib(int);//多余参量，用来编译通过
-	~publiclib();
-	int data[90][10][10];//栈深，行，列。
-	int banned[90][10][10][10];//栈深，行，列，填的数字，值为0或1（已经用过）。填的数字若为0，可显示出这一个格子的可能性个数
-	int chgLocBanned(int, int, int);//针对第datap项banned，在第i行第j列填k，改变该改变的占领情况。
-	int chgNumBanned(int, int, int);//针对第datap项banned，在第order码线的首（0）尾（1）设定num=k，改变该改变的禁止情况。
-	int chgBannedZero();//针对第datap项banned，刷新填的数字为0时显示出的这一个格子的可能性个数（耗时不会多于回溯）
-	int datap;//栈顶
-	int outputData();//压栈时顺便输出
-	int upData();//压栈
-	int upBanned();//压栈
-	int recover();//弹栈
-	
-};
+/********************全局变量和函数*********************/
+int mapdata[90][10][10];//栈深，行，列。//不知为何，用data编译不通过，说不明确。
+int banned[90][10][10][10];//栈深，行，列，填的数字，值为0或1（已经用过）。填的数字若为0，可显示出这一个格子的可能性个数
+int chgLocBanned(int, int, int);//针对第datap项banned，在第i行第j列填k，改变该改变的占领情况。
+int chgNumBanned(int, int, int);//针对第datap项banned，在第order码线的首（0）尾（1）设定num=k，改变该改变的禁止情况。
+int chgBannedZero();//针对第datap项banned，刷新填的数字为0时显示出的这一个格子的可能性个数（耗时不会多于回溯）
+int datap;//栈顶
+int outputData();//压栈时顺便输出
+int upData();//压栈
+int upBanned();//压栈
+int recover();//弹栈
+int publiclib();
+
 
 class commander
 {
